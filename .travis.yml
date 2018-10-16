@@ -10,6 +10,7 @@ script:
 deploy:
   provider: gcs
   access_key_id: GOOG6XNS2QINHV4C7ESV6D3H
+  project: ./build/
   secret_access_key:
     secure: yFXBExsNNrx/N3iG3uyTHu7j0Zzgj+EuTeqcSDEL
   bucket: react-poc-gcp
