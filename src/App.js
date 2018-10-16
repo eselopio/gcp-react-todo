@@ -11,7 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <img src={storage} className="App-logo" alt="logo" />
           <p>
-           React POC Cloud Storage | v.1
+           React POC Cloud Storage | v.2
           </p>
           <a
             className="App-link"
