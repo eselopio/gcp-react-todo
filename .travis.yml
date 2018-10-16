@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: gcs
+  access_key_id: GOOG6XNS2QINHV4C7ESV6D3H
+  secret_access_key:
+    secure: yFXBExsNNrx/N3iG3uyTHu7j0Zzgj+EuTeqcSDEL
+  bucket: react-poc-gcp
+  on:
+    repo: eselopio/gcp-react-todo
