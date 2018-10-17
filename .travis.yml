@@ -15,8 +15,7 @@ deploy:
   secret_access_key:
     secure: yFXBExsNNrx/N3iG3uyTHu7j0Zzgj+EuTeqcSDEL
   bucket: react-poc-gcp
-  skip_cleanup: true
   acl: public-read
-  cache_control: "max-age=600"
   on:
+    branch: master
     repo: eselopio/gcp-react-todo
