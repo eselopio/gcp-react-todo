@@ -7,6 +7,7 @@ cache:
 script:
 - npm test
 - npm run build
+before_deploy: "echo 'ready?' cd bin && ls"
 deploy:
   provider: gcs
   access_key_id: $accessKey
@@ -14,7 +15,7 @@ deploy:
     secure: $secretAccessKey
   skip_cleanup: true
   bucket: react-poc-gcp
-  # local-dir: "./build"
+  local-dir: "bin"
   upload-dir: "build"
   detect_encoding: true
   cache_control: no-cache
