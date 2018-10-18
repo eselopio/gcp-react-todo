@@ -1,23 +1,27 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
 deploy:
   provider: gcs
-  access_key_id: GOOG6XNS2QINHV4C7ESV6D3H
+  access_key_id: KEYID
   secret_access_key:
-    secure: yFXBExsNNrx/N3iG3uyTHu7j0Zzgj+EuTeqcSDEL
+    secure: KEYSECRET
   skip_cleanup: true
   bucket: react-poc-gcp
-  local-dir: ./build
+  local-dir: "./build"
   upload-dir: build
   detect_encoding: true
   cache_control: no-cache
   on:
     repo: eselopio/gcp-react-todo
   acl: public-read
+env:
+  global:
+  - secure: wWEHm+Xl/+nuUqLnLwjOmxi5L46FSPGNN6S4I10b/qk+EhYTzfuwxOZ1q8pi7X6wqIw1xl8EXxcCJhUEXS9yHkwNmreTxD4Gok1f4DS5GqSSH94nri7PrWQfqo4C0miZ6DdQvzyw9/pCd6IrRS5cpx5/+xl8NZXtBVV4fxys+a7THhBtOWKT7CHmiL3gdbIZwHhHzHjZnkVFpeAt1Bs1pcVOECS5bybvaE0Tq8OARrN4wf8wlea7jKu/NHZu2gB4D9Xw9LEoytwWlkuxZNxUxRNiWm7dxk8jw8Rf6jvk04yAapXoznL9cNIvCQPfoLB2R1BHeJ/EVYiHs2SQJ1qSr8VxAvl+YLsFR63oxnFEHLTXhlNhfBgu51UYjXxdFSRqdeZyCXBCSjTBhQtGixYW5ropuM6JK41EMBTZ0Ji3X7mMr7gdb08VoN+v1CSTy6dwJNgcFLS63NsMwIKBlDgq4KdIn8PqH2KCHpLy/kEef9RjFCiTxmdthAvkS3XKVOcIDb5xisO1KBc5CHWg6Mjew7ItyCGXFHk+JVnS4ULhJ9KVn84NUghIR3lcVlpRvHjZuUvIEgJPzeV96DB3oQtULwPaNXsWXkB1EXRxAttyfLTFtlvAx8j/SlsCxR/sguTKyIXJayOTfBENLaaom31F/IciwptguITVGS3RRQEvOns=
+  - secure: F9m4Td+ZCOd31rebkfhfDSLhe/N7Pvlj7LqCcBrCnOtAvf49LXQ5c4XceuxMNt8wMwwX8GUG7/NrpBEL4MAen38gCeAP5HdEstOLeD4RyJnvRpDEDWU/NTiaPRhx+AwFjBYP9NhAfHDTv2JQTwLAwxVpiWDEPkpUydNzjS/MPRkKY7TlTlCLmnWVKU3SFH+4VuuGa0lU2njbkBWV5/HWb5bXcIY3aig7XrgF0UfRDtnKXZNm/NWkJfOfAZ94pG4dKkIYl0DNOrbEjWn1fmSnzlUeWY7TqWqyx9wrjoP1NjvrgDDgPsdka3hFpnuhA6/kG3TM0sRX5He95cBYuTglwd9aK/YNDRC22GF1w7m0j3lprdVK8/np6qg3mwnlSXRFZt1uuCZp6iC8hCKt0q4gzI+5JRacV8NTaRVTDNUzd+QonFrXHNxUdZYbt29b0gq7pQHmlLjcmJ0JNnilu/FzE7+ArENfCX7iZC3A4KHc0KTtMz/0O0jajX9rzXoA4QAw55W9IOR0odkXQOip+0kAKlaE1hJHQQss4xzHPv05b/gXlD18l08uiO0m/8URf1Hf1eKdhksaFCn8FKVpItv54wyDajIXvdxrklVYXlc+Hor7eVy5XRNbbhZlAhHmQ6LifE7a8waObx9evjreH6sfD3ltD05beS01ED2sqrIDBD8=
