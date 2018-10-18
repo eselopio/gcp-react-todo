@@ -9,13 +9,13 @@ script:
 - npm run build
 deploy:
   provider: gcs
-  access_key_id: KEYID
+  access_key_id: $accessKey
   secret_access_key:
-    secure: KEYSECRET
+    secure: $secretAccessKey
   skip_cleanup: true
   bucket: react-poc-gcp
-  local-dir: "./build"
-  upload-dir: build
+  # local-dir: "./build"
+  upload-dir: "build"
   detect_encoding: true
   cache_control: no-cache
   on:
