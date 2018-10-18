@@ -15,7 +15,7 @@ deploy:
     secure: $secretAccessKey
   skip_cleanup: true
   bucket: react-poc-gcp
-  local-dir: "bin"
+  local-dir: "build"
   upload-dir: "build"
   detect_encoding: true
   cache_control: no-cache
