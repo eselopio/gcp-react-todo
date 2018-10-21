@@ -5,23 +5,22 @@ cache:
   directories:
   - node_modules
 script:
-- npm test
-- npm run build
+  - npm run test
+  - npm run build
 before_deploy: "echo 'ready?' cd bin && ls"
 deploy:
   provider: gcs
   access_key_id: $accessKey
   secret_access_key:
     secure: $secretAccessKey
-  skip_cleanup: true
-  bucket: react-poc-gcp
+  bucket: react-app-front
   local-dir: "build"
   upload-dir: "build"
-  detect_encoding: true
+  skip_cleanup: true
+  acl: public-read
   cache_control: no-cache
   on:
     repo: eselopio/gcp-react-todo
-  acl: public-read
 env:
   global:
   - secure: wWEHm+Xl/+nuUqLnLwjOmxi5L46FSPGNN6S4I10b/qk+EhYTzfuwxOZ1q8pi7X6wqIw1xl8EXxcCJhUEXS9yHkwNmreTxD4Gok1f4DS5GqSSH94nri7PrWQfqo4C0miZ6DdQvzyw9/pCd6IrRS5cpx5/+xl8NZXtBVV4fxys+a7THhBtOWKT7CHmiL3gdbIZwHhHzHjZnkVFpeAt1Bs1pcVOECS5bybvaE0Tq8OARrN4wf8wlea7jKu/NHZu2gB4D9Xw9LEoytwWlkuxZNxUxRNiWm7dxk8jw8Rf6jvk04yAapXoznL9cNIvCQPfoLB2R1BHeJ/EVYiHs2SQJ1qSr8VxAvl+YLsFR63oxnFEHLTXhlNhfBgu51UYjXxdFSRqdeZyCXBCSjTBhQtGixYW5ropuM6JK41EMBTZ0Ji3X7mMr7gdb08VoN+v1CSTy6dwJNgcFLS63NsMwIKBlDgq4KdIn8PqH2KCHpLy/kEef9RjFCiTxmdthAvkS3XKVOcIDb5xisO1KBc5CHWg6Mjew7ItyCGXFHk+JVnS4ULhJ9KVn84NUghIR3lcVlpRvHjZuUvIEgJPzeV96DB3oQtULwPaNXsWXkB1EXRxAttyfLTFtlvAx8j/SlsCxR/sguTKyIXJayOTfBENLaaom31F/IciwptguITVGS3RRQEvOns=
