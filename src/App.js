@@ -11,7 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <img src={storage} className="App-logo" alt="logo" />
           <p>
-           React POC Cloud Storage | v.3 | TravisCi
+           React POC Cloud Storage | v.4 | TravisCi
           </p>
           <a
             className="App-link"
